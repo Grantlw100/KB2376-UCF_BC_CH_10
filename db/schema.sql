@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS happyco_db;
+
 USE happyco_db;
 
 DROP TABLE IF EXISTS employee;
