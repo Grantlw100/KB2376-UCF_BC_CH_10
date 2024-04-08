@@ -604,7 +604,6 @@ async function editRole() {
         const query = 'UPDATE role SET title = ?, salary = ?, department_id = ? WHERE id = ?';
         await connection.query(query, [moreAnswers.title, moreAnswers.salary, moreAnswers.department_id, answers.role_id]);
         console.log('Role updated successfully');
-        // Follow with the next action prompt
         const nextAction = await inquirer.prompt({
             name: 'nextAction',
             type: 'list',
@@ -693,7 +692,6 @@ async function editDepartment() {
 async function deleteDepartment() {
     try {
         const [departments] = await connection.execute('SELECT id, name FROM department');
-        // Add a 'Cancel' option to the list of departments
         const choices = departments.map(department => ({
             name: department.name,
             value: department.id
